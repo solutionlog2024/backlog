@@ -342,6 +342,13 @@ def tela_backlog():
             index=0  # Define "Todas" como padrão
         )
 
+        # Filtro por Status de Carregamento
+        status_carregamento_filtro = st.selectbox(
+            "Selecione um Status de Carregamento:",
+            options=["Todas"] + list(filtered_oetker['Status Carregaento'].unique()),
+            index=0  # Define "Todas" como padrão
+        )
+
         # Filtra o dataframe com base na UF selecionada
         if uf_filtro != "Todas":
             filtered_oetker = filtered_oetker[filtered_oetker['UF'] == uf_filtro]
@@ -349,6 +356,10 @@ def tela_backlog():
         # Filtra o dataframe com base no Status de Separação selecionado
         if status_filtro != "Todas":
             filtered_oetker = filtered_oetker[filtered_oetker['Status SeparaAAo'] == status_filtro]
+
+        # Filtra o dataframe com base no Status de Carregamento selecionado
+        if status_carregamento_filtro != "Todas":
+            filtered_oetker = filtered_oetker[filtered_oetker['Status Carregaento'] == status_carregamento_filtro]
 
         # Exibe o dataframe filtrado
         st.dataframe(filtered_oetker, use_container_width=True)
