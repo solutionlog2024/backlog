@@ -308,12 +308,12 @@ def tela_backlog():
         # Realizando filtros por data planejamento
         filtros = st.multiselect(
             "Selecione uma data para filtrar:", 
-            options=oetker['Data Planejamento'].unique(), 
+            options=oetker['Data SeparaAAo'].unique(), 
         )
 
         # Aplica o filtro de data se o usuário selecionou alguma data
         if filtros:
-            filtered_oetker = oetker[oetker['Data Planejamento'].isin(filtros)]  # Corrigido para usar 'filtros'
+            filtered_oetker = oetker[oetker['Data SeparaAAo'].isin(filtros)]  # Corrigido para usar 'filtros'
         else:
             filtered_oetker = oetker  # Se nenhuma data selecionada, usa o dataframe completo
             
