@@ -1,4 +1,4 @@
-import streamlit as st
+árimport streamlit as st
 import pandas as pd
 import unicodedata
 from datetime import datetime
@@ -307,7 +307,7 @@ def tela_backlog():
 
         # Realizando filtros por data planejamento
         filtros = st.multiselect(
-            "Selecione uma data para filtrar:", 
+            "Selecione uma data de Separação para filtrar:", 
             options=oetker['Data SeparaAAo'].unique(), 
         )
 
